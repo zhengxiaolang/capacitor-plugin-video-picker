@@ -5,7 +5,7 @@ Capacitor plugin to pick video files
 ## Install
 
 ```bash
-npm install capacitor-plugin-video-picker
+npm install https://github.com/coderpradp/capacitor-plugin-video-picker.git
 npx cap sync
 ```
 
