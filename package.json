@@ -1,6 +1,6 @@
 {
   "name": "@coderpradp/capacitor-plugin-video-picker",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Capacitor plugin to pick video files",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
