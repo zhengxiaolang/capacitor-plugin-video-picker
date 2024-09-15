@@ -5,8 +5,18 @@ Capacitor plugin to pick video files
 ## Install
 
 ```bash
-npm install https://github.com/coderpradp/capacitor-plugin-video-picker.git
+npm install @coderpradp/capacitor-plugin-video-picker
 npx cap sync
+```
+
+## Usage
+
+```typescript
+import { VideoPicker } from '@coderpradp/capacitor-plugin-video-picker';
+
+const pickVideos = async () => {
+  const result = await VideoPicker.pick();
+};
 ```
 
 ## API
