@@ -24,13 +24,17 @@ public class VideoPickerPlugin extends Plugin {
 
     @PluginMethod
     public void pick(PluginCall call) {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("video/*");
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false);
-        intent = Intent.createChooser(intent, "");
+        try {
+            Intent intent = new Intent(Intent.ACTION_PICK);
+            intent.setType("video/*");
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false);
+            intent = Intent.createChooser(intent, "");
 
-        startActivityForResult(call, intent, "pickVideosResult");
+            startActivityForResult(call, intent, "pickVideosResult");
+        } catch (Exception ex) {
+            String message = ex.getMessage();
+            call.reject(message);
+        }
     }
 
     @ActivityCallback

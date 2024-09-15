@@ -21,9 +21,10 @@ public class VideoPickerPlugin: CAPPlugin, CAPBridgedPlugin {
             let videoPicker = UIImagePickerController()
             videoPicker.delegate = self
             videoPicker.sourceType = .photoLibrary
+            videoPicker.modalPresentationStyle = .fullScreen
             videoPicker.mediaTypes = ["public.movie"]
 
-            self.bridge!.viewController!.present(videoPicker, animated: true)
+            self.bridge?.viewController?.present(videoPicker, animated: true)
         }
 
     }
@@ -34,7 +35,7 @@ extension VideoPickerPlugin: UIImagePickerControllerDelegate {
         guard
             let mediaUrl = info[.mediaURL] as? URL
         else {
-            savedCall!.reject("Cannot get video URL")
+            savedCall?.reject("Cannot get video URL")
             return
         }
 
@@ -42,7 +43,7 @@ extension VideoPickerPlugin: UIImagePickerControllerDelegate {
         do {
             url = try saveTemporaryVideo(mediaUrl)
         } catch {
-            savedCall!.reject("Cannot save video")
+            savedCall?.reject("Cannot save video")
             return
         }
 
@@ -57,7 +58,7 @@ extension VideoPickerPlugin: UIImagePickerControllerDelegate {
         files.append(file)
 
         controller.dismiss(animated: true) {
-            self.savedCall!.resolve([
+            self.savedCall?.resolve([
                 "files": files
             ])
         }
@@ -65,7 +66,7 @@ extension VideoPickerPlugin: UIImagePickerControllerDelegate {
 
     public func imagePickerControllerDidCancel(_ controller: UIImagePickerController) {
         controller.dismiss(animated: true) {
-            self.savedCall!.reject("canceled")
+            self.savedCall?.reject("canceled")
         }
     }
 
