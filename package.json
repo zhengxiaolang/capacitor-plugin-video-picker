@@ -13,7 +13,7 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "CapacitorPluginVideoPicker.podspec"
+    "CoderpradpCapacitorPluginVideoPicker.podspec"
   ],
   "author": "Pradip Khadka",
   "license": "MIT",
