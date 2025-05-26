@@ -1,0 +1,83 @@
+{
+  "api": {
+    "name": "VideoPickerPlugin",
+    "slug": "videopickerplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "pick",
+        "signature": "() => Promise<VideoPickerResults>",
+        "parameters": [],
+        "returns": "Promise<VideoPickerResults>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "VideoPickerResults"
+        ],
+        "slug": "pick"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "VideoPickerResults",
+      "slug": "videopickerresults",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "files",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "VideoPickerResult"
+          ],
+          "type": "VideoPickerResult[]"
+        }
+      ]
+    },
+    {
+      "name": "VideoPickerResult",
+      "slug": "videopickerresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "path",
+          "tags": [],
+          "docs": "File Path",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "webPath",
+          "tags": [],
+          "docs": "webPath returns a path that can be used to set the src attribute of an image for efficient\r\nloading and rendering.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "tags": [],
+          "docs": "File Name",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "extension",
+          "tags": [],
+          "docs": "File Extensions",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
